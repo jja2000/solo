@@ -93,11 +93,11 @@ SOLO_VERSIONISH := "master"
 docker-build:
 	docker build -t $(DOCKER_IMAGE) .
 	docker run --rm -v "$(CURDIR)/builds:/builds" \
-				    $(DOCKER_IMAGE) "./in-docker-build.sh" $(SOLO_VERSIONISH)
+				    $(DOCKER_IMAGE) "/tmp/solo/in-docker-build.sh" $(SOLO_VERSIONISH)
 uncached-docker-build:
 	docker build --no-cache -t $(DOCKER_IMAGE) .
 	docker run --rm -v "$(CURDIR)/builds:/builds" \
-				    $(DOCKER_IMAGE) "./in-docker-build.sh" $(SOLO_VERSIONISH)
+				    $(DOCKER_IMAGE) "/tmp/solo/in-docker-build.sh" $(SOLO_VERSIONISH)
 
 CPPCHECK_FLAGS=--quiet --error-exitcode=2
 
