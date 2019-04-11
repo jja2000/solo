@@ -4,7 +4,7 @@ version=${1:-master}
 
 export PREFIX=/opt/gcc-arm-none-eabi-8-2018-q4-major/bin/
 
-cd targets/stm32l432/
+cd /tmp/solo/targets/stm32l432/
 git fetch --tags
 git checkout ${version}
 git submodule update --init --recursive
